@@ -19,7 +19,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("/", (req, res) => res.send({ hi: "TOMCAT" }));
+app.get("/", (req, res) => res.send({ hi: "Tomcat" }));
 
 require("./routes/authRoutes")(app);
 
