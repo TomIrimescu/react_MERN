@@ -12,9 +12,9 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
   }
-  
+
   render() {
-    return(
+    return (
       <div className="container">
         <BrowserRouter>
           <div>

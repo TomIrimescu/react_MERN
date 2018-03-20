@@ -11,18 +11,28 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
+        return (
+          <li>
+            <a href="/auth/google">Login With Google</a>
+          </li>
+        );
       default:
         return [
-          <li key="1"><Payments /></li>,
-          <li key='2' style={{ margin: "0 10px" }}>
+          <li key="1">
+            <Payments />
+          </li>,
+          <li key="2" style={{ margin: "0 10px" }}>
             Credits: {this.props.auth.credits}
           </li>,
-          <li key="3"><Link to="/" onClick={this.props.logoutUser}>Logout</Link></li>
-          ];
+          <li key="3">
+            <Link to="/" onClick={this.props.logoutUser}>
+              Logout
+            </Link>
+          </li>
+        ];
     }
   }
-  
+
   render() {
     return (
       <nav>
@@ -33,9 +43,7 @@ class Header extends Component {
           >
             Emaily
           </Link>
-          <ul className="right">
-            {this.renderContent()}
-          </ul>
+          <ul className="right">{this.renderContent()}</ul>
         </div>
       </nav>
     );
