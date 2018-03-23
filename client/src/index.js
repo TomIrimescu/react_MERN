@@ -10,7 +10,12 @@ import reducers from "./reducers";
 import axios from "axios"; // test code for backend route
 window.axios = axios; // test code for backend route
 
-const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+const store = createStore(
+  reducers,
+  {},
+  composeEnhancers(applyMiddleware(reduxThunk))
+);
 
 ReactDOM.render(
   <Provider store={store}>
